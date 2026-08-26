@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register — ORBIT Summit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page">
+    <div class="ticket">
+
+      <!-- ============ FORM SIDE ============ -->
+      <form class="ticket-form" novalidate>
+
+        <header class="form-header">
+          <p class="eyebrow">Registration</p>
+          <h1>Reserve your seat at ORBIT</h1>
+          <p class="lede">One day of talks, workshops and hallway conversations for people who build products. Fill in your details below — we'll email your pass.</p>
+        </header>
+
+        <!-- Section 1 -->
+        <section class="form-section" aria-labelledby="s1-heading">
+          <div class="section-heading">
+            <span class="section-number">01</span>
+            <h2 id="s1-heading">Your details</h2>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="fullname">Full name</label>
+              <input type="text" id="fullname" name="fullname" placeholder=" " required autocomplete="name">
+              <span class="hint">As it should appear on your badge</span>
+            </div>
+          </div>
+
+          <div class="field-row two-up">
+            <div class="field">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder=" " required autocomplete="email">
+              <span class="hint">We'll send your confirmation here</span>
+            </div>
+            <div class="field">
+              <label for="phone">Phone <span class="optional">(optional)</span></label>
+              <input type="tel" id="phone" name="phone" placeholder=" " autocomplete="tel">
+              <span class="hint">Only used for day-of updates</span>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="company">Company / Organisation <span class="optional">(optional)</span></label>
+              <input type="text" id="company" name="company" placeholder=" " autocomplete="organization">
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="form-section" aria-labelledby="s2-heading">
+          <div class="section-heading">
+            <span class="section-number">02</span>
+            <h2 id="s2-heading">Choose your pass</h2>
+          </div>
+
+          <fieldset class="tier-group">
+            <legend class="visually-hidden">Ticket tier</legend>
+
+            <input type="radio" id="tier-general" name="tier" value="general" checked>
+            <label for="tier-general" class="tier-card">
+              <span class="tier-name">General</span>
+              <span class="tier-price">$149</span>
+              <span class="tier-desc">Full-day access to all talks and the expo floor.</span>
+            </label>
+
+            <input type="radio" id="tier-vip" name="tier" value="vip">
+            <label for="tier-vip" class="tier-card">
+              <span class="tier-name">VIP</span>
+              <span class="tier-price">$299</span>
+              <span class="tier-desc">General access plus front-row seating and the speaker dinner.</span>
+            </label>
+
+            <input type="radio" id="tier-student" name="tier" value="student">
+            <label for="tier-student" class="tier-card">
+              <span class="tier-name">Student</span>
+              <span class="tier-price">$59</span>
+              <span class="tier-desc">Valid student ID required at check-in.</span>
+            </label>
+          </fieldset>
+
+          <fieldset class="track-group">
+            <legend>Sessions you're interested in <span class="optional">(pick any)</span></legend>
+
+            <div class="checkbox-row">
+              <input type="checkbox" id="track-eng" name="tracks" value="engineering">
+              <label for="track-eng">Engineering &amp; infrastructure</label>
+            </div>
+            <div class="checkbox-row">
+              <input type="checkbox" id="track-design" name="tracks" value="design">
+              <label for="track-design">Product &amp; design</label>
+            </div>
+            <div class="checkbox-row">
+              <input type="checkbox" id="track-growth" name="tracks" value="growth">
+              <label for="track-growth">Growth &amp; go-to-market</label>
+            </div>
+          </fieldset>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="form-section" aria-labelledby="s3-heading">
+          <div class="section-heading">
+            <span class="section-number">03</span>
+            <h2 id="s3-heading">Final details</h2>
+          </div>
+
+          <div class="field-row two-up">
+            <div class="field">
+              <label for="guests">Guests joining you</label>
+              <input type="number" id="guests" name="guests" min="0" max="6" step="1" value="0" inputmode="numeric">
+              <span class="hint">Up to 6 additional guests</span>
+            </div>
+            <div class="field">
+              <label for="referral">How did you hear about us? <span class="optional">(optional)</span></label>
+              <select id="referral" name="referral">
+                <option value="" selected>Select one</option>
+                <option value="colleague">A colleague or friend</option>
+                <option value="social">Social media</option>
+                <option value="newsletter">Newsletter</option>
+                <option value="search">Search engine</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="dietary">Dietary requirements <span class="optional">(optional)</span></label>
+              <textarea id="dietary" name="dietary" rows="3" placeholder=" "></textarea>
+            </div>
+          </div>
+
+          <div class="checkbox-row terms-row">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the <a href="#">terms of attendance</a> and <a href="#">privacy policy</a></label>
+          </div>
+        </section>
+
+        <button type="submit" class="submit-btn">
+          Complete registration
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+
+      <!-- ============ STUB SIDE ============ -->
+      <aside class="ticket-stub" aria-label="Event summary">
+        <div class="stub-content">
+          <p class="stub-brand">ORBIT&nbsp;SUMMIT</p>
+
+          <div class="stub-row">
+            <span class="stub-label">Date</span>
+            <span class="stub-value">14 Mar 2026</span>
+          </div>
+          <div class="stub-row">
+            <span class="stub-label">Doors</span>
+            <span class="stub-value">08:30 — 18:00</span>
+          </div>
+          <div class="stub-row">
+            <span class="stub-label">Venue</span>
+            <span class="stub-value">Lahore, Pakistan</span>
+          </div>
+          <div class="stub-row">
+            <span class="stub-label">Ref</span>
+            <span class="stub-value stub-mono">OR-26-04471</span>
+          </div>
+
+          <div class="stub-stamp" aria-hidden="true">Registering</div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+</body>
+</html>
